@@ -13,6 +13,7 @@ env/
 .env
 
 # Streamlit gizli bilgileri ve ayarları
+.streamlit/
 .streamlit/secrets.toml
 
 # ChromaDB ve Vektör Veritabanı Dosyaları

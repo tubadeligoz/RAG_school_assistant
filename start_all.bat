@@ -34,7 +34,7 @@ if errorlevel 1 (
 )
 
 echo [+] Streamlit arayuzu baslatiliyor...
-start cmd /k "start_streamlit_tailscale.bat"
+start cmd /k ".venv\Scripts\activate && python -m streamlit run src/app/streamlit_app.py --server.port 8501 --server.headless true"
 
 goto end
 
