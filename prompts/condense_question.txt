@@ -1,0 +1,8 @@
+Konuşma geçmişine bakarak son soruyu tek başına anlaşılır hale getir.
+Sadece yeniden yazılmış soruyu yaz. Açıklama ekleme.
+
+Konuşma:
+{history_text}
+
+Son soru: {question}
+Yeniden yazılmış soru:

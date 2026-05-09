@@ -1,0 +1,9 @@
+Aşağıdaki öğrenci sorusu için en fazla 2 alternatif arama sorgusu üret.
+
+Kurallar:
+- Her satıra bir sorgu yaz.
+- Madde imi, numara ve açıklama kullanma.
+- Sorgular kısa ve Türkçe olsun.
+- Sorgular yalnızca staj, Erasmus/değişim, ÇAP/yandal veya öğretim görevlileri kapsamına uygunsa üret.
+
+Soru: {question}

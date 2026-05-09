@@ -151,10 +151,10 @@ def scrape_url(page, url: str):
 # MAIN
 # =========================
 def run_scraper():
-    print("\n🚀 RAG SCRAPER STARTED\n")
+    print("\n[SCRAPER] Started\n")
 
     if not URLS:
-        print("❌ URL listesi boş")
+        print("[SCRAPER] URL listesi bos")
         return
 
     with sync_playwright() as p:
@@ -171,7 +171,7 @@ def run_scraper():
 
         browser.close()
 
-    print("\n✅ SCRAPING COMPLETED\n")
+    print("\n[SCRAPER] Completed\n")
 
 if __name__ == "__main__":
     run_scraper()

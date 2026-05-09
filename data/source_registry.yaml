@@ -1,0 +1,134 @@
+version: 1
+updated_at: "2026-05-09"
+description: "DORA icin resmi Dogus Universitesi kaynak kaydi. Sadece desteklenen kapsamlar indekslenir."
+
+categories:
+  staj:
+    output: staj_faq.jsonl
+    label: "Staj"
+    sources:
+      - url: "https://www.dogus.edu.tr/docs/default-source/default-document-library/staj-uygulamalari-usul-ve-esaslari.pdf"
+        title: "Onlisans/Lisans Staj Uygulamalari Usul ve Esaslari"
+        parser: local_pdf_summary
+        local_processed_json: "data/processed/pdf/staj-uygulamalari-usul-ve-esaslari.json"
+        authority: "official_policy"
+      - url: "https://www.dogus.edu.tr/docs/default-source/default-document-library/uygulamali-egitimler-yonergesi.pdf"
+        title: "Onlisans/Lisans Uygulamali Egitimler Yonergesi"
+        parser: local_pdf_summary
+        local_processed_json: "data/processed/pdf/uygulamali-egitimler-yonergesi.json"
+        authority: "official_policy"
+      - url: "https://muhendislik.dogus.edu.tr/staj"
+        title: "Muhendislik ve Doga Bilimleri Fakultesi Staj"
+        parser: page_summary
+        faculty: "Muhendislik ve Doga Bilimleri Fakultesi"
+        authority: "official_unit_page"
+      - url: "https://fef.dogus.edu.tr/bolumler/ingilizce-mutercim-ve-tercumanlik/staj"
+        title: "Ingilizce Mutercim ve Tercumanlik Staj"
+        parser: page_summary
+        faculty: "Fen-Edebiyat Fakultesi"
+        department: "Ingilizce Mutercim ve Tercumanlik"
+        authority: "official_department_page"
+
+  erasmus:
+    output: erasmus_faq.jsonl
+    label: "Erasmus ve uluslararasi degisim"
+    sources:
+      - url: "https://www.dogus.edu.tr/uluslararasi-aday/uluslararasi/erasmus-degisim-programi/anlasmalarimiz"
+        title: "Erasmus Anlasmali Universiteler"
+        parser: partner_university_list
+        authority: "official_erasmus_agreements_page"
+      - url: "https://akademik.dogus.edu.tr/icerikler/arastirmacilar-icin/akademik-isbirlikleri"
+        title: "Akademik Isbirlikleri ve Ikili Anlasmalar"
+        parser: agreement_list
+        authority: "official_collaboration_page"
+      - url: "https://www.dogus.edu.tr/duyurular/detay/erasmus-ogrenci-ogrenim-ve-staj-hareketliligi-2026-donemi-projesi-basvurulari"
+        title: "Erasmus+ 2026 Ogrenci Ogrenim ve Staj Hareketliligi Basvurulari"
+        parser: page_summary
+        authority: "official_announcement"
+      - url: "https://www.dogus.edu.tr/uluslararasi/erasmus-degisim-programi/erasmus-ogrenci-hareketliligi/ogrenim-hareketliligi/giden-ogrenci-hareketliligi"
+        title: "Giden Ogrenci Ogrenim Hareketliligi"
+        parser: page_summary
+        authority: "official_process_page"
+      - url: "https://www.dogus.edu.tr/uluslararasi/erasmus-degisim-programi/erasmus-ogrenci-hareketliligi/staj-hareketliligi/giden-ogrenci-staj-hareketliligi"
+        title: "Giden Ogrenci Staj Hareketliligi"
+        parser: page_summary
+        authority: "official_process_page"
+      - url: "https://www.dogus.edu.tr/docs/default-source/default-document-library/erasmus_ogrenci_ve_personel_hareketliligi_yonergesi.pdf"
+        title: "Erasmus Ogrenci ve Personel Hareketliligi Yonergesi"
+        parser: local_pdf_summary
+        local_processed_json: "data/processed/pdf/uluslararasi-ogrenci-degisim-yonergesi.json"
+        authority: "official_policy"
+
+  cift_anadal_yandal:
+    output: cap_yandal_faq.jsonl
+    label: "Cift anadal ve yandal"
+    sources:
+      - url: "https://www.dogus.edu.tr/docs/default-source/default-document-library/cift-anadal-ve-yandal-yonergesi.pdf"
+        title: "Cift Anadal ve Yandal Yonergesi"
+        parser: local_pdf_summary
+        local_processed_json: "data/processed/pdf/cift-anadal-ve-yandal-yonergesi.json"
+        authority: "official_policy"
+      - url: "https://www.dogus.edu.tr/ogrenci/kayit-kabul/cift-anadal-yan-dal"
+        title: "Cift Anadal / Yan Dal Kayit Kabul"
+        parser: page_summary
+        authority: "official_application_page"
+      - url: "https://iibf.dogus.edu.tr/bolumler/yonetim-bilisim-sistemleri/yandal-%C3%A7ift-anadal-olana%C4%9F%C4%B1"
+        title: "Yonetim Bilisim Sistemleri Yandal/Cift Anadal Olanagi"
+        parser: page_summary
+        faculty: "Iktisadi, Idari ve Sosyal Bilimler Fakultesi"
+        department: "Yonetim Bilisim Sistemleri"
+        authority: "official_department_page"
+      - url: "https://myo.dogus.edu.tr/programlar/grafik-tasarimi/cift-anadal-olanagi"
+        title: "Grafik Tasarimi Cift Anadal Olanagi"
+        parser: page_summary
+        faculty: "Meslek Yuksekokulu"
+        department: "Grafik Tasarimi"
+        authority: "official_program_page"
+
+  ogretim_gorevlileri:
+    output: academic_staff.jsonl
+    label: "Ogretim gorevlileri ve akademik kadro"
+    sources:
+      - url: "https://muhendislik.dogus.edu.tr/akademik-kadro"
+        title: "Muhendislik ve Doga Bilimleri Fakultesi Akademik Kadro"
+        parser: academic_staff
+        faculty: "Muhendislik ve Doga Bilimleri Fakultesi"
+        authority: "official_staff_page"
+      - url: "https://muhendislik.dogus.edu.tr/bolumler/yazilim-muhendisligi/akademik-kadro"
+        title: "Yazilim Muhendisligi Akademik Kadro"
+        parser: academic_staff
+        faculty: "Muhendislik ve Doga Bilimleri Fakultesi"
+        department: "Yazilim Muhendisligi"
+        authority: "official_department_staff_page"
+      - url: "https://muhendislik.dogus.edu.tr/bolumler/bilgisayar-muhendisligi-ingilizce/akademik-kadro"
+        title: "Bilgisayar Muhendisligi Akademik Kadro"
+        parser: academic_staff
+        faculty: "Muhendislik ve Doga Bilimleri Fakultesi"
+        department: "Bilgisayar Muhendisligi"
+        authority: "official_department_staff_page"
+      - url: "https://iibf.dogus.edu.tr/akademik-kadro"
+        title: "Iktisadi, Idari ve Sosyal Bilimler Fakultesi Akademik Kadro"
+        parser: academic_staff
+        faculty: "Iktisadi, Idari ve Sosyal Bilimler Fakultesi"
+        authority: "official_staff_page"
+      - url: "https://iibf.dogus.edu.tr/bolumler/yonetim-bilisim-sistemleri/akademik-kadro"
+        title: "Yonetim Bilisim Sistemleri Akademik Kadro"
+        parser: academic_staff
+        faculty: "Iktisadi, Idari ve Sosyal Bilimler Fakultesi"
+        department: "Yonetim Bilisim Sistemleri"
+        authority: "official_department_staff_page"
+      - url: "https://fef.dogus.edu.tr/akademik-kadro"
+        title: "Fen-Edebiyat Fakultesi Akademik Kadro"
+        parser: academic_staff
+        faculty: "Fen-Edebiyat Fakultesi"
+        authority: "official_staff_page"
+      - url: "https://hukuk.dogus.edu.tr/akademik-kadro/"
+        title: "Hukuk Fakultesi Akademik Kadro"
+        parser: academic_staff
+        faculty: "Hukuk Fakultesi"
+        authority: "official_staff_page"
+      - url: "https://myo.dogus.edu.tr/akademik-kadro"
+        title: "Meslek Yuksekokulu Akademik Kadro"
+        parser: academic_staff
+        faculty: "Meslek Yuksekokulu"
+        authority: "official_staff_page"

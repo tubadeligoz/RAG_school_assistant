@@ -4,7 +4,7 @@ URLS = [
     # ── Ana sayfalar ─────────────────────────────────────────
     "https://www.dogus.edu.tr",
     "https://www.dogus.edu.tr/hakkimizda",
-    "https://www.dogus.edu.tr/hakkimizda/universitemiz/gecmisten-bugune-dogus"
+    "https://www.dogus.edu.tr/hakkimizda/universitemiz/gecmisten-bugune-dogus",
 
     # ── Aday / Başvuru ───────────────────────────────────────
     "https://www.dogus.edu.tr/aday",

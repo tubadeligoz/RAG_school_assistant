@@ -12,22 +12,22 @@ BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 # RUN STEP HELPER
 # =========================
 def run_step(name, command):
-    print(f"\n🚀 {name} BAŞLIYOR...\n" + "-" * 50)
+    print(f"\n[PIPELINE] {name} basliyor...\n" + "-" * 50)
 
     result = subprocess.run(command, shell=True, cwd=BASE_DIR)
 
     if result.returncode != 0:
-        print(f"\n❌ {name} HATA VERDİ! Pipeline durduruldu.")
+        print(f"\n[PIPELINE] {name} hata verdi. Pipeline durduruldu.")
         sys.exit(1)
 
-    print(f"\n✅ {name} TAMAMLANDI\n")
+    print(f"\n[PIPELINE] {name} tamamlandi\n")
 
 
 # =========================
 # MAIN PIPELINE
 # =========================
 def main():
-    print("\n🔥 RAG PIPELINE STARTED 🔥\n")
+    print("\n[PIPELINE] RAG pipeline started\n")
 
     # 1. SCRAPER
     run_step(
@@ -47,22 +47,28 @@ def main():
         "python src/pipeline/pdf_extractor.py"
     )
 
-    # 4. CHUNKER (UNIFIED)
+    # 4. CURATED DATA
     run_step(
-        "4. CHUNKER (HTML + PDF → Chunks)",
+        "4. CURATED DATA (Official sources to JSONL)",
+        "python scripts/build_curated_data.py"
+    )
+
+    # 5. CHUNKER (UNIFIED)
+    run_step(
+        "5. CHUNKER (HTML + PDF + Curated to Chunks)",
         "python src/pipeline/chunker.py"
     )
 
-    # 5. VECTORIZE
+    # 6. VECTORIZE
     run_step(
-        "5. VECTORIZE (Embedding → ChromaDB)",
+        "6. VECTORIZE (Embedding to ChromaDB)",
         "python src/pipeline/vectorize.py"
     )
 
-    print("\n🎉 PIPELINE SUCCESSFULLY COMPLETED 🎉\n")
+    print("\n[PIPELINE] Pipeline successfully completed\n")
 
-    print("📌 Test etmek için:")
-    print("👉 streamlit run src/app/streamlit_app.py\n")
+    print("Test etmek icin:")
+    print("streamlit run src/app/streamlit_app.py\n")
 
 
 # =========================

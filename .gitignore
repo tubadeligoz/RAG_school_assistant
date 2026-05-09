@@ -1,6 +1,8 @@
 # Python önbellek dosyaları
 __pycache__/
 *.pyc
+*.log
+streamlit_log.txt
 
 # Sanal ortam (Virtual Environment) klasörleri
 venv/
@@ -27,6 +29,11 @@ docs/
 *.csv
 *.docx
 *.json
+!data/
+data/*
+!data/source_registry.yaml
+!data/curated/
+!data/curated/*.jsonl
 
 # İşletim sistemi kalıntıları
 .DS_Store

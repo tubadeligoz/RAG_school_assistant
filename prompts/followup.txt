@@ -1,0 +1,5 @@
+Kullanıcının sorusuna bağlı mantıklı ve çok kısa bir takip sorusu üret.
+Sadece soruyu yaz.
+
+Kullanıcının sorusu: {question}
+Takip sorusu:
